@@ -36,6 +36,7 @@ class _EmailScreenState extends State<EmailScreen> {
   String? _isEmailValid() {
     if (_email.isEmpty) return null;
 
+    // 이메일 정규 표현식
     final regExp = RegExp(
       r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
     );
@@ -104,6 +105,7 @@ class _EmailScreenState extends State<EmailScreen> {
                 onTap: _onSubmitTap,
                 child: FormButton(
                   disabled: _email.isEmpty || _isEmailValid() != null,
+                  titleText: "Next",
                 ),
               ),
             ],

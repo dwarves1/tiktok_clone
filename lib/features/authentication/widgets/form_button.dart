@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:tiktok_clone/constants/sizes.dart';
 
 class FormButton extends StatelessWidget {
-  const FormButton({required this.disabled, super.key});
+  const FormButton({
+    required this.disabled,
+    super.key,
+    required this.titleText,
+  });
 
+  final String titleText;
   final bool disabled;
 
   @override
@@ -25,7 +30,7 @@ class FormButton extends StatelessWidget {
             color: disabled ? Colors.grey.shade400 : Colors.white,
             fontWeight: FontWeight.w600,
           ),
-          child: Text("Next", textAlign: TextAlign.center),
+          child: Text(titleText, textAlign: TextAlign.center),
         ),
       ),
     );
