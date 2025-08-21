@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tiktok_clone/constants/sizes.dart';
 import 'package:tiktok_clone/features/authentication/sign_up_screen.dart';
+import 'package:tiktok_clone/features/onboarding/interests_screen.dart';
 
 void main() {
   runApp(const TikTokApp());
@@ -22,14 +23,17 @@ class TikTokApp extends StatelessWidget {
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,
           elevation: 0,
+          centerTitle: true,
+          scrolledUnderElevation: 0,
           titleTextStyle: TextStyle(
             fontSize: Sizes.size16 + Sizes.size2,
             fontWeight: FontWeight.w600,
             color: Colors.black,
           ),
         ),
+        bottomAppBarTheme: BottomAppBarTheme(color: Colors.white, elevation: 0),
       ),
-      home: const SignUpScreen(),
+      home: const InterestsScreen(),
     );
   }
 }
