@@ -31,10 +31,12 @@ class _InterestButtonState extends State<InterestButton> {
         ),
         decoration: BoxDecoration(
           color: _isSelected ? Theme.of(context).primaryColor : Colors.white,
+          // ignore: deprecated_member_use
           border: Border.all(color: Colors.black.withOpacity(0.1)),
           borderRadius: BorderRadius.circular(Sizes.size32),
           boxShadow: [
             BoxShadow(
+              // ignore: deprecated_member_use
               color: Colors.black.withOpacity(0.05),
               blurRadius: 5,
               spreadRadius: 5,
