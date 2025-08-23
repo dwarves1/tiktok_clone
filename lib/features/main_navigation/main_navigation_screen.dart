@@ -29,26 +29,22 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: screens[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onTap,
-        selectedItemColor: Theme.of(context).primaryColor,
-        // type으로 fixed, shifting 설정 가능
-        type: BottomNavigationBarType.shifting,
-        // item이 4개 이상이면 shifting
-        items: [
-          BottomNavigationBarItem(
-            icon: FaIcon(FontAwesomeIcons.house),
+
+      bottomNavigationBar: NavigationBar(
+        // 아이콘 라벨 보여주는 방식 설정
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+        selectedIndex: _selectedIndex,
+        // onTap == onDestinationSelected
+        onDestinationSelected: _onTap,
+        // items == destinations
+        destinations: [
+          NavigationDestination(
+            icon: FaIcon(FontAwesomeIcons.house, color: Colors.teal),
             label: "Home",
-            tooltip: "What are you?",
-            backgroundColor: Colors.amber,
           ),
-          BottomNavigationBarItem(
-            icon: FaIcon(FontAwesomeIcons.magnifyingGlass),
+          NavigationDestination(
+            icon: FaIcon(FontAwesomeIcons.magnifyingGlass, color: Colors.amber),
             label: "Search",
-            // 길게 누르고 있으면 나오는 툴팁
-            tooltip: "What are you?",
-            backgroundColor: Colors.blue,
           ),
         ],
       ),
