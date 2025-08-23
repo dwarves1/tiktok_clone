@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -27,27 +28,22 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: screens[_selectedIndex],
-
-      bottomNavigationBar: NavigationBar(
-        // 아이콘 라벨 보여주는 방식 설정
-        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
-        selectedIndex: _selectedIndex,
-        // onTap == onDestinationSelected
-        onDestinationSelected: _onTap,
-        // items == destinations
-        destinations: [
-          NavigationDestination(
-            icon: FaIcon(FontAwesomeIcons.house, color: Colors.teal),
+    // cupertino : iOS 스타일
+    // main.dart에서 MaterialApp을 사용했기 때문에 CupertinoTabScaffold를 바로 사용할 수 없음
+    return CupertinoTabScaffold(
+      tabBar: CupertinoTabBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.house),
             label: "Home",
           ),
-          NavigationDestination(
-            icon: FaIcon(FontAwesomeIcons.magnifyingGlass, color: Colors.amber),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.search),
             label: "Search",
           ),
         ],
       ),
+      tabBuilder: (context, index) => screens[index],
     );
   }
 }
