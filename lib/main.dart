@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tiktok_clone/constants/sizes.dart';
-import 'package:tiktok_clone/features/authentication/sign_up_screen.dart';
 import 'package:tiktok_clone/features/main_navigation/main_navigation_screen.dart';
 
 void main() {
@@ -8,6 +7,7 @@ void main() {
 }
 
 // mobbin : 여러 앱들의 스크린샷들을 모아둔 사이트
+// https://m3.material.io/components/navigation-bar/overview 에서 여러 디자인과 위젯들을 확인 가능
 
 class TikTokApp extends StatelessWidget {
   const TikTokApp({super.key});
