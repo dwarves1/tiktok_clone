@@ -36,6 +36,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: _selectedIndex == 0 ? Colors.black : Colors.white,
       // 항상 선택된 화면을 새롭게 그리도록 설정 screens.elementAt(_selectedIndex)
       body: Stack(
         children: [
