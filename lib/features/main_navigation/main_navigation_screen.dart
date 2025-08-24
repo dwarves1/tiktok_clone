@@ -5,7 +5,7 @@ import 'package:tiktok_clone/constants/gaps.dart';
 import 'package:tiktok_clone/constants/sizes.dart';
 import 'package:tiktok_clone/features/main_navigation/widgets/nav_tab.dart';
 import 'package:tiktok_clone/features/main_navigation/widgets/post_video_button.dart';
-import 'package:tiktok_clone/features/main_navigation/widgets/stf_screen.dart';
+import 'package:tiktok_clone/features/videos/video_timeline_screen.dart';
 
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});
@@ -44,12 +44,12 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           Offstage(
             // true : 화면에서 보이지 않음, false : 화면에 보임
             offstage: _selectedIndex != 0,
-            child: StfScreen(),
+            child: VideoTimelineScreen(),
           ),
           // offsetage를 사용하면 상태가 유지됨
-          Offstage(offstage: _selectedIndex != 1, child: StfScreen()),
-          Offstage(offstage: _selectedIndex != 3, child: StfScreen()),
-          Offstage(offstage: _selectedIndex != 4, child: StfScreen()),
+          Offstage(offstage: _selectedIndex != 1, child: Container()),
+          Offstage(offstage: _selectedIndex != 3, child: Container()),
+          Offstage(offstage: _selectedIndex != 4, child: Container()),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
