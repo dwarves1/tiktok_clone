@@ -34,6 +34,7 @@ class _VideoCommentsState extends State<VideoComments> {
 
   @override
   void dispose() {
+    _scrollController.dispose();
     super.dispose();
   }
 
